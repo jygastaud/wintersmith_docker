@@ -1,7 +1,7 @@
 wintersmith_docker
 ==================
 
-Expose Wintersmith static site generator (http://wintersmith.io) preview nodejs server into a docker.
+Expose Wintersmith static site generator (http://wintersmith.io) preview (which use a nodejs server) into a docker.
 
 Currently, this is just a short try of playing with docker.
 
