@@ -7,5 +7,5 @@ sed -i ' -F _docker docker' /etc/bash_completion.d/docker.io
 apt-get install curl -qq
 
 # Build first Docker with Wintersmith
-cd /vagrant && docker build -t wintersmith/wintersmith .
-docker run -p 49160:8080 -d wintersmith/wintersmith
+cd /vagrant && docker build -t jygastaud/wintersmith .
+docker run -p 49160:8080 -d jygastaud/wintersmith

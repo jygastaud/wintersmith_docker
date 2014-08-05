@@ -38,7 +38,7 @@ docker build -t wintersmith/wintersmith .
 then
 
 ```
-docker run -p 8123:8080 -d wintersmith/wintersmith
+sudo docker run -v ${PWD}/www/site:/www/site -p 8123:8080 -d wintersmith/wintersmith
 ```
 
 ### Try it
