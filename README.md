@@ -50,21 +50,21 @@ sudo docker run -v ${PWD}/www/<website root folder>:/www/<website root folder> -
 #### Case 2
 You want to **generate** a site with wintersmith
 
-*. Build a data container
+##### Build a data container
 ```
 docker run --rm --name wintersmtih_build -w /www -d jygastaud/wintersmith new <website root folder>
 ```
 
-*. Use Volume from data container as
+##### Use Volume from data container as
 ```
 docker run --volumes-from=wintersmtih_build -w /www/<website root folder> --name wintersmtih_preview -p 8123:8080 -d jygastaud/wintersmith preview
 ```
 
-*. Copy files from container
+##### Copy files from container
 Currently, there is no simple and quick solution to copy the folder generated into the data container.
 It should not work until [that issue](https://github.com/docker/docker/issues/1992) is open.
 
-1 Current workaround
+###### Current workaround
 We recommand the [install and use nsenter](https://github.com/jpetazzo/nsenter#how-do-i-install-nsenter-with-this) to create a tar file outside de mount volume and be able to get it via the "docker cp" command.
 
 ```
@@ -76,7 +76,7 @@ then, copy the file generated.
 docker cp wintersmtih_build:/www/<website root folder> <local path>
 ```
 
-2 Futurs solutions
+###### Futurs solutions
 ```
 docker run --volumes-from=wintersmtih_build -v ${PWD}/www/site:/www/website -w /www/website --name wintersmtih_preview -p 8123:8080 -d jygastaud/wintersmith preview
 ```
